@@ -17,20 +17,27 @@ button.addEventListener('click',
 
     function(){
 
-        const userMail = mailField.value;
-        
-        if (userMail === invitati[0] || userMail === invitati[1] || userMail === invitati[2] || userMail === invitati[3] || userMail === invitati[4]) { //La mail è in lista
-
-            console.log('Sei in lista'); //Output
-            wrapper.innerHTML = `Grande, sei in lista bomber!`;
-        
-        } else { //La mail non è in lista
+        // Ciclo
+        for(let i = 0; i < invitati.lenght; i++) {
             
-            console.log('Mi dispiace, vattenn!'); //Output
-            wrapper.innerHTML = `Mi dispiace, non ti caga nessuno. Vattenn, munnezz!`;
+            mailField = invitati[i]; 
+            
+            if (invitati[i] < invitati.length) { // La mail è in lista
+
+                console.log('Sei in lista'); //Output
+                wrapper.innerHTML = `Grande, sei in lista bomber!`; 
+
+            } else { // La mail non è in lista 
+
+                //Output
+                console.log('Mi dispiace, vattenn!');
+                wrapper.innerHTML = `Mi dispiace, non ti caga nessuno. Vattenn, munnezz!`;
+
+            }
 
         }
 
+        
     }
 
 );
