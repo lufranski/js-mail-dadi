@@ -7,8 +7,11 @@ console.log('Lista invitati: ' , invitati);
 
 // Variables
 const mailField = document.querySelector('input');
+
 const button = document.querySelector('button');
+
 const wrapper = document.getElementById('container');
+
 
 console.log(mailField , button , wrapper);
 
@@ -16,27 +19,36 @@ console.log(mailField , button , wrapper);
 button.addEventListener('click',
 
     function(){
-
+        
+        const userMail = mailField.value;
+        
+        let puoiEntrare = false;
+        
         // Ciclo
-        for(let i = 0; i < invitati.lenght; i++) {
+        for(let i = 0; i < invitati.length; i++) {
             
-            mailField = invitati[i]; 
             
-            if (invitati[i] < invitati.length) { // La mail è in lista
-
-                console.log('Sei in lista'); //Output
-                wrapper.innerHTML = `Grande, sei in lista bomber!`; 
-
-            } else { // La mail non è in lista 
-
-                //Output
-                console.log('Mi dispiace, vattenn!');
-                wrapper.innerHTML = `Mi dispiace, non ti caga nessuno. Vattenn, munnezz!`;
-
+            if (userMail === invitati[i]) { // La mail è in lista
+                
+                puoiEntrare = true;
+                
             }
 
         }
 
+        if (puoiEntrare == true) {
+        
+            console.log('puoi entrare');
+        
+            wrapper.innerHTML = 'puoi entrare';
+        
+        } else {
+        
+            console.log('non puoi entrare');
+        
+            wrapper.innerHTML = 'non puoi entrare';
+        
+        }
         
     }
 
