@@ -9,6 +9,7 @@ console.log('Lista invitati: ' , invitati);
 const mailField = document.querySelector('input');
 const button = document.querySelector('button');
 const wrapper = document.getElementById('container');
+const bg = document.getElementById('background');
 
 console.log(mailField , button , wrapper);
 
@@ -42,6 +43,10 @@ button.addEventListener('click',
             wrapper.innerHTML = 'non puoi entrare';
         }
         
+        bg.classList.add('ntoni');
+
+        wrapper.classList.add('result');
+
     }
 
 );
