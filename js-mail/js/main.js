@@ -5,17 +5,33 @@ const invitati = ["marcogiordano@gmail.com" , "joebastianich@gmail.com" , "carlo
 
 console.log('Lista invitati: ' , invitati);
 
-// Chiedere all'utente di inserire la propria mail
-const userMail = prompt("Inserisci la tua mail per verificare che sia nella lista invitati ");
+// Variables
+const mailField = document.querySelector('input');
+const button = document.querySelector('button');
+const wrapper = document.getElementById('container');
 
-console.log('Mail utente: ' , userMail);
-// Controllare che sia nella lista
-if (userMail === invitati[0] || userMail === invitati[1] || userMail === invitati[2] || userMail === invitati[3] || userMail === invitati[4]) { //La mail è in lista
+console.log(mailField , button , wrapper);
 
-    console.log('Sei in lista');
+// Al click del bottone l'input inserito dall'utente viene verificato
+button.addEventListener('click',
 
-} else {
-    console.log('Mi dispiace, vattenn!');
-}
+    function(){
 
-// Output
+        const userMail = mailField.value;
+        
+        if (userMail === invitati[0] || userMail === invitati[1] || userMail === invitati[2] || userMail === invitati[3] || userMail === invitati[4]) { //La mail è in lista
+
+            console.log('Sei in lista'); //Output
+            wrapper.innerHTML = `Grande, sei in lista bomber!`;
+        
+        } else { //La mail non è in lista
+            
+            console.log('Mi dispiace, vattenn!'); //Output
+            wrapper.innerHTML = `Mi dispiace, non ti caga nessuno. Vattenn, munnezz!`;
+
+        }
+
+    }
+
+);
+
